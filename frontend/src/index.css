@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --neon-blue: #00d4ff;
+    --neon-green: #00ff88;
+    --neon-red: #ff3366;
+    --bg-dark: #0a0a1a;
+    --bg-card: #0f0f2a;
+    --bg-card2: #13132e;
+    --border-glow: rgba(0, 212, 255, 0.2);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background-color: var(--bg-dark);
+    color: #e2e8f0;
+    font-family: 'Inter', system-ui, sans-serif;
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #0a0a1a; }
+  ::-webkit-scrollbar-thumb { background: #00d4ff44; border-radius: 3px; }
+}
+
+@layer utilities {
+  .neon-text { color: #00d4ff; text-shadow: 0 0 10px #00d4ff88; }
+  .neon-green { color: #00ff88; text-shadow: 0 0 10px #00ff8888; }
+  .neon-red { color: #ff3366; text-shadow: 0 0 10px #ff336688; }
+
+  .card-glow {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glow);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.05), inset 0 1px 0 rgba(255,255,255,0.05);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #00d4ff22, #00d4ff44);
+    border: 1px solid #00d4ff66;
+    color: #00d4ff;
+    transition: all 0.2s;
+  }
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #00d4ff44, #00d4ff66);
+    box-shadow: 0 0 20px #00d4ff44;
+  }
+
+  .btn-danger {
+    background: linear-gradient(135deg, #ff336622, #ff336644);
+    border: 1px solid #ff336666;
+    color: #ff3366;
+  }
+  .btn-danger:hover { box-shadow: 0 0 20px #ff336644; }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .scan-input {
+    background: rgba(0,212,255,0.05);
+    border: 1px solid rgba(0,212,255,0.2);
+    color: #e2e8f0;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .scan-input:focus {
+    border-color: #00d4ff;
+    box-shadow: 0 0 0 2px rgba(0,212,255,0.15);
+  }
+  .scan-input::placeholder { color: #4a5568; }
+}
